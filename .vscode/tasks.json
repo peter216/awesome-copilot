@@ -68,6 +68,24 @@
       "group": "build",
       "detail": "Validates all skill manifest files.",
       "dependsOn": "npm install"
+    },
+    // peter216 tasks
+    {
+      "label": "Upload Unsaved Buffer as Gist",
+      "type": "shell",
+      "command": "${env:HOME}/bin/gist_upload.sh",
+      "options": {
+        "shell": {
+          "executable": "/usr/bin/bash"
+        },
+        "env": {
+          "GIST_CONTENT": "${input:selectedText}"
+        }
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      }
     }
   ],
   "inputs": [
@@ -94,6 +112,12 @@
       "description": "Brief description of the skill",
       "default": "A brief description of my skill.",
       "type": "promptString"
+    },
+    // peter216 tasks
+    {
+      "id": "selectedText",
+      "type": "command",
+      "command": "extension.commandvariable.selectedText"
     }
   ]
 }

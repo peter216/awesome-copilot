@@ -1,0 +1,26 @@
+---
+applyTo: "**"
+---
+
+**This file is an addition by user peter216 to enhance the awesome-copilot instructions for their personal use. It is not part of the official awesome-copilot repository.**
+
+# General Code Creation Instructions
+- Languages preferential order: Python, Bash, YAML, JSON, XML. PowerShell is not preferred unless explicitly requested.
+- Other important tools in my workflow include:
+  - gopass
+  - chezmoi
+  - diff-so-fancy
+  - git
+  - gh (GitHub CLI)
+  - postman
+- Be careful not to match public code too closely, which is blocked by enterprise policy. 
+- Output the entire file when making changes, unless the word 'snippet' appears in the request 
+- When snippets are requested, make only relevant changes and clearly indicate their location in the code with unambiguous context. 
+- Place comments on separate lines above the code they reference. - Distinguish new comments by adding an extra '#' after the '#' or '/'. Do not add this symbol to pre-existing comments. 
+- When specific changes are requested, make only those changes. 
+- If the prompt is ambiguous or your confidence in the response is low, ask for more details. 
+- Prioritize idempotent and secure infrastructure-as-code. 
+- Use env variables for all sensitive data. 
+
+# General Response Instructions 
+- Take a deliberate second pass before replying to a query. Slow down, self-critique, refine for clarity and structure, and exercise reader awareness.
