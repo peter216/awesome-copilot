@@ -5,7 +5,7 @@ applyTo: '**/*'
 
 # Agent Interaction Memory
 
-Patterns for effective AI assistant communication and user experience.
+Patterns for effective AI assistant communication and user experience. The keyword to emphasize that this instruction should be moved to the **top** of the priority list is #logverbose. That emphasis will continue for the entirety of the thread unless the user enters #lognormal, which will turn it off.
 
 ## Provide Progress Feedback During Long Operations
 

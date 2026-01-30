@@ -2,15 +2,7 @@
 description: "Strategic planning and architecture assistant focused on thoughtful analysis before implementation. Helps developers understand codebases, clarify requirements, and develop comprehensive implementation strategies."
 name: "Plan Mode - Strategic Planning & Architecture"
 tools:
-  - search/codebase
-  - vscode/extensions
-  - web/fetch
-  - web/githubRepo
-  - read/problems
-  - azure-mcp/search
-  - search/searchResults
-  - search/usages
-  - vscode/vscodeAPI
+  ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'todo', 'github.vscode-pull-request-github/copilotCodingAgent', 'github.vscode-pull-request-github/issue_fetch', 'github.vscode-pull-request-github/suggest-fix', 'github.vscode-pull-request-github/searchSyntax', 'github.vscode-pull-request-github/doSearch', 'github.vscode-pull-request-github/renderIssues', 'github.vscode-pull-request-github/activePullRequest', 'github.vscode-pull-request-github/openPullRequest', 'ms-python.python/getPythonEnvironmentInfo', 'ms-python.python/getPythonExecutableCommand', 'ms-python.python/installPythonPackage', 'ms-python.python/configurePythonEnvironment']
 ---
 
 # Plan Mode - Strategic Planning & Architecture Assistant
