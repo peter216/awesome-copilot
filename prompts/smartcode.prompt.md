@@ -22,6 +22,8 @@ Execute complex code changes systematically following a documented plan, using i
 
 Follow the documented plan step-by-step, validate at each checkpoint, and maintain code quality throughout the implementation process.
 
+**State Management:** Progress, decisions, and phase completions are logged to `/Copilot-Processing.md` at workspace root for recovery if interrupted. Verbose logging mode (#logverbose) is active and will remain on until explicitly disabled with #lognormal.
+
 ## Input Parameters
 
 Before starting, gather:
@@ -103,9 +105,9 @@ Before starting, gather:
    - Note if you encounter unexpected complexity or blockers
 
 2. **Record State Periodically**
-   - Document current progress in case of interruption
+   - Update `/Copilot-Processing.md` with current progress for recovery if interrupted
    - Note any deferred decisions or future considerations
-   - Track completed phases and remaining work
+   - Track completed phases and remaining work with status updates
 
 3. **Ask Questions Proactively**
    - Don't proceed with guesses when information is missing
