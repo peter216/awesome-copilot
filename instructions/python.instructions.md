@@ -38,16 +38,22 @@ applyTo: '**/*.py'
 - Include comments for edge cases and the expected behavior in those cases.
 - Write unit tests for functions and document them with docstrings explaining the test cases.
 
+## Ansible Module Specific Conventions
+
+- Do not include a shebang line at the beginning of a python file that is intended as an Ansible module, as ansible will provide the python interpreter
+- If you have web access, check the official Ansible documentation for writing modules: https://docs.ansible.com/projects/ansible/latest/dev_guide/developing_modules_general.html
+- If you do not have web access, look at the reStructuredText files in the awesome-copilot/docs/ansible-modules directory for coding guides and best practices.
+
 ## Example of Proper Documentation
 
 ```python
 def calculate_area(radius: float) -> float:
     """
     Calculate the area of a circle given the radius.
-    
+
     Parameters:
     radius (float): The radius of the circle.
-    
+
     Returns:
     float: The area of the circle, calculated as π * radius^2.
     """
