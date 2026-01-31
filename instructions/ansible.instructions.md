@@ -31,6 +31,36 @@ applyTo: '**/*.yaml, **/*.yml'
   - Only set `become: true` at the play level or on an `include:` statement, if all included tasks require super user privileges; otherwise, specify `become: true` at the task level
   - Only set `become: true` on a task if it requires super user privileges
 
+## Boolean Extra Variables (CRITICAL PITFALL)
+
+**IMPORTANT**: When passing boolean extra variables via command line with `-e`, they are interpreted as **strings** which evaluate as **truthy** in Ansible, even when set to 'false'.
+
+### The Problem
+```bash
+# WRONG - This sets WRITEMODE to the string 'false' which evaluates as TRUE!
+ansible-playbook playbook.yml -e WRITEMODE=false
+```
+
+### The Solution
+Use JSON format for boolean extra vars:
+```bash
+# CORRECT - This sets WRITEMODE to boolean false
+ansible-playbook playbook.yml -e '{"WRITEMODE": false}'
+```
+
+### Protection Idiom
+**Always** include this guard task when using boolean extra vars to catch this common mistake:
+```yaml
+- name: Catch and stop a common input error
+  ansible.builtin.fail:
+    msg: "WRITEMODE is set to the string 'false' which evaluates as true! Aborting. Note that WRITEMODE is false by default."
+  when:
+    - WRITEMODE | type_debug == 'str'
+    - WRITEMODE | lower == 'false'
+```
+
+This pattern should be used for **any** extra var that controls critical behavior like write operations, destructive actions, or production deployments.
+
 ## Secret Management
 
 - When using Ansible alone, store secrets using Ansible Vault
@@ -80,7 +110,7 @@ applyTo: '**/*.yaml, **/*.yml'
 - Use `ansible-playbook --syntax-check` to check for syntax errors
 - Use `ansible-playbook --check --diff` to perform a dry-run of playbook execution
 
-<!-- 
+<!--
 These guidelines were based on, or copied from, the following sources:
 
 - [Ansible Documentation - Tips and Tricks](https://docs.ansible.com/ansible/latest/tips_tricks/index.html)
