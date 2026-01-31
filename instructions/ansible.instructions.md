@@ -5,6 +5,14 @@ applyTo: '**/*.yaml, **/*.yml'
 
 # Ansible Conventions and Best Practices
 
+## Testing
+
+**When working on Ansible projects, always check for a `docs/TESTING.md` file first.** This file typically contains:
+- Environment setup instructions
+- Credential management procedures
+- Test execution commands
+- Expected outputs and troubleshooting
+
 ## General Instructions
 
 - Use Ansible to configure and manage infrastructure.
