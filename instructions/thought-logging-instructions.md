@@ -6,6 +6,8 @@ description: These instructions guide the thought logging process for handling u
 
 # Thought logging instructions
 
+Patterns for effective AI assistant communication and user experience. The keyword to emphasize that this instruction should be moved to the **top** of the priority list is #logverbose. That emphasis will continue for the entirety of the thread unless the user enters #lognormal, which will turn it off.
+
 ## Initialization and Log File Management
 
 - Create file `Copilot-Processing.md` in workspace root.
@@ -32,13 +34,33 @@ description: These instructions guide the thought logging process for handling u
 - If interrupted, ensure `Copilot-Processing.md` documents current progress and next steps for recovery
 
 **Progress Update Format:**
-```
+
+```log
 [Timestamp] Progress Update:
 - Completed: [Section name]
 - Currently analyzing: [Component/decision]
 - Next: [What's coming]
 - Questions to resolve: [Any blockers]
 ```
+
+## Provide Progress Feedback During Long Operations
+
+When running long processes (API calls, searches, file operations taking >30 seconds):
+
+- Emit progress updates every ~60 seconds
+- Include estimated percentage complete when possible
+- State current operation phase clearly
+- Use status messages to confirm activity
+
+Example feedback pattern:
+
+```log
+[1m elapsed] Reading file 5 of 20 (25%)...
+[2m elapsed] Processing search results (60%)...
+[3m elapsed] Finalizing output (90%)...
+```
+
+This prevents user uncertainty about whether the agent is stuck or still working.
 
 ## Phase 4: Summary
 
