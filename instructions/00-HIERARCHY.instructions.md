@@ -56,7 +56,7 @@ When instructions conflict, apply in this order:
 - **Resolution**: Full verbose logging takes precedence (user command)
 
 **Example 3: Platform-Specific vs. Code Quality**
-- Arch Linux instructions suggest `pacman -Syu`
+- Arch Linux instructions suggest `pacman -Syu` # This is an example only, we are **not** actually on Arch Linux
 - Performance optimization suggests checking package sizes first
 - **Resolution**: Both apply—run performance check, then use platform command
 
