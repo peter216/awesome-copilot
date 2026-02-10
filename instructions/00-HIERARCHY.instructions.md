@@ -62,7 +62,7 @@ When instructions conflict, apply in this order:
 
 ## Active Keywords & Modes
 
-| Keyword | Effect | Duration | Deactivation |
-|---------|--------|----------|--------------|
-| `#logverbose` | Enable detailed thought logging | Until `#lognormal` | `#lognormal` |
-| `#sanitycheck` | Deep thinking for better responses | Session unless disabled | `fastmode` |
+| Keyword        | Instruction File                | Effect                             | Duration                | Deactivation |
+|----------------|---------------------------------|------------------------------------|-------------------------|--------------|
+| `#logverbose`  | thought-logging-instructions.md | Enable detailed thought logging    | Until `#lognormal`      | `#lognormal` |
+| `#sanitycheck` | sanity-check-mode.md            | Deep thinking for better responses | Session unless disabled | `fastmode`   |
