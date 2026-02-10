@@ -22,8 +22,6 @@ Execute complex code changes systematically following a documented plan, using i
 
 Follow the documented plan step-by-step, validate at each checkpoint, and maintain code quality throughout the implementation process.
 
-**State Management:** Progress, decisions, and phase completions are logged to `/Copilot-Processing.md` at workspace root for recovery if interrupted. Verbose logging mode (#logverbose) is active and will remain on until explicitly disabled with #lognormal.
-
 ## Input Parameters
 
 Before starting, gather:
