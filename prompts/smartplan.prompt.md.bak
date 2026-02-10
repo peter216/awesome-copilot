@@ -23,7 +23,7 @@ Generate detailed refactoring and architecture migration plans that document cur
 
 Create a comprehensive plan that bridges current state to target architecture, documenting all decisions, trade-offs, and ambiguities for future implementation.
 
-**State Management:** Planning progress, analysis findings, and decisions are logged to `Copilot-Processing.md` at workspace root for recovery if interrupted. Verbose logging mode (#logverbose) is active and will remain on until explicitly disabled with #lognormal.
+**State Management:** Planning progress, analysis findings, and decisions are logged to `/Copilot-Processing.md` at workspace root for recovery if interrupted. Verbose logging mode (#logverbose) is active and will remain on until explicitly disabled with #lognormal.
 
 ## Input Parameters
 

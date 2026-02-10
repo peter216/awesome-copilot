@@ -1,19 +1,24 @@
 ---
 applyTo: '**'
-description: These instructions guide the thought logging process for handling user requests, ensuring structured planning, execution, and documentation of progress in the `/Copilot-Processing.md` file.
+name: 'Thought Logging Instructions'
+description: These instructions guide the thought logging process for handling user requests, ensuring structured planning, execution, and documentation of progress in the `Copilot-Processing.md` file.
 ---
 
 # Thought logging instructions
 
-## Initialization
+## Initialization and Log File Management
 
-- Create file `/Copilot-Processing.md` in workspace root. If the file already exists, rename it /Copilot-Processing-<datetime>.md (where datetime is the file modification time) and create a new `/Copilot-Processing.md`. If you do not have writing permissions, ask the user to grant them or manually move the file.
-- Populate `/Copilot-Processing.md` with user request details
+- Create file `Copilot-Processing.md` in workspace root.
+  - If the file already exists, rename it /Copilot-Processing-<datetime>.md (where datetime is the file modification time) and create a new `/Copilot-Processing.md`.
+  - If you do not have writing permissions, ask the user to grant them or manually move the file.
+  - Maximum size of the file should not exceed 1MB; archive older entries if necessary.
+  - Maximum number of archived files: 5; delete oldest if exceeded.
+- Populate `Copilot-Processing.md` with user request details
 
 ## Planning
 
-- Generate an action plan into the `/Copilot-Processing.md` file.
-- Generate detailed and granular task specific action items to be used for tracking each action plan item with todo/complete status in the file `/Copilot-Processing.md`.
+- Generate an action plan into the `Copilot-Processing.md` file.
+- Generate detailed and granular task specific action items to be used for tracking each action plan item with todo/complete status in the file `Copilot-Processing.md`.
 - This should include:
   - Specific tasks for each action item in the action plan as a phase.
   - Clear descriptions of what needs to be done
@@ -22,9 +27,9 @@ description: These instructions guide the thought logging process for handling u
 
 ## Periodic Progress Updates
 
-- Save work-in-progress to `/Copilot-Processing.md` every 5 minutes of work
+- Save work-in-progress to `Copilot-Processing.md` every 5 minutes of work
 - Provide status updates explaining what section is being analyzed
-- If interrupted, ensure `/Copilot-Processing.md` documents current progress and next steps for recovery
+- If interrupted, ensure `Copilot-Processing.md` documents current progress and next steps for recovery
 
 **Progress Update Format:**
 ```
@@ -37,6 +42,6 @@ description: These instructions guide the thought logging process for handling u
 
 ## Phase 4: Summary
 
-- Add summary to `/Copilot-Processing.md`
+- Add summary to `Copilot-Processing.md`
 - Execute only when ALL actions complete
-- Inform user: "Added final summary to `/Copilot-Processing.md`."
+- Inform user: "Added final summary to `Copilot-Processing.md`."

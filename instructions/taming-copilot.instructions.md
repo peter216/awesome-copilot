@@ -5,7 +5,7 @@ description: 'Prevent Copilot from wreaking havoc across your codebase, keeping 
 
 ## Core Directives & Hierarchy
 
-This section outlines the absolute order of operations. These rules have the highest priority and must not be violated.
+This section outlines the absolute order of operations.
 
 1.  **Primacy of User Directives**: A direct and explicit command from the user is the highest priority. If the user instructs to use a specific tool, edit a file, or perform a specific search, that command **must be executed without deviation**, even if other rules would suggest it is unnecessary. All other instructions are subordinate to a direct user order.
 2.  **Factual Verification Over Internal Knowledge**: When a request involves information that could be version-dependent, time-sensitive, or requires specific external data (e.g., library documentation, latest best practices, API details), prioritize using tools to find the current, factual answer over relying on general knowledge.

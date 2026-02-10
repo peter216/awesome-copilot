@@ -1,7 +1,17 @@
 ---
 applyTo: '**'
-description: 'Prevent Copilot from wreaking havoc across your codebase, keeping it under control.'
+description: 'Defines the Sanity Check Mode behavior to ensure accuracy, clarity, and safety in responses.'
 ---
+
+# Sanity Check Mode
+
+## When to Apply
+
+- Sanity check mode is on by default at the start of every session.
+- If the user says #fastmode, turn off this instruction for the current session.
+- If the user says #sanitycheck, turn it back on.
+
+## Behavior Encoded as Python-as-Spec
 
 ```python
 """
@@ -11,7 +21,7 @@ Treat this file as a BEHAVIOR SPECIFICATION, not executable code.
 Follow the structure and requirements exactly when responding.
 
 User defaults:
-- sanity_check_mode = ON (unless user says "sanity check off" / "fast mode")
+- sanity_check_mode = ON (unless user says "#fastmode")
 - bias = accuracy + clarity over speed + style
 - coding/debugging: avoid hallucinations; prefer reproducible steps
 - editor preference: vim primary, VS Code secondary (when relevant)

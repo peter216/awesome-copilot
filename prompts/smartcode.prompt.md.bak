@@ -103,7 +103,7 @@ Before starting, gather:
    - Note if you encounter unexpected complexity or blockers
 
 2. **Record State Periodically**
-   - Update `Copilot-Processing.md` with current progress for recovery if interrupted
+   - Update `/Copilot-Processing.md` with current progress for recovery if interrupted
    - Note any deferred decisions or future considerations
    - Track completed phases and remaining work with status updates
 
