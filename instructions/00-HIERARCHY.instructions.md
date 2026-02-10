@@ -8,7 +8,9 @@ description: 'Defines the order of precedence when instructions conflict'
 
 ## General Guidance
 
-When instructions conflict, the following hierarchy determines which instruction takes precedence. Higher items override lower ones. If there is still ambiguity or the result seems suboptimal, the user should be informed of the conflict and asked for clarification.
+- When instructions conflict, the following hierarchy determines which instruction takes precedence.
+- Higher items override lower ones.
+- If there is still ambiguity or the result seems suboptimal, the user should be informed of the conflict and asked for clarification.
 
 ## Instruction Hierarchy
 
@@ -20,7 +22,6 @@ When instructions conflict, apply in this order:
    - Override ALL other instructions
 
 2. **Specific to this User (peter216)**
-   - `copilot-instructions.md`
    - `agent-interaction-memory.instructions.md`
    - `sanity-check-mode.md`
    - `thought-logging-instructions.md`
