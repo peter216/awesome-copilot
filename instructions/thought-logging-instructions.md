@@ -29,9 +29,9 @@ Patterns for effective AI assistant communication and user experience. The keywo
 
 ## Periodic Progress Updates
 
-- Save work-in-progress to `Copilot-Processing.md` every 5 minutes of work
-- Provide status updates explaining what section is being analyzed
-- If interrupted, ensure `Copilot-Processing.md` documents current progress and next steps for recovery
+- Save work-in-progress to `Copilot-Processing.md` after each task, tool call, or other short unit of work.
+- Provide status updates as described in the "Provide Progress Feedback During Long Operations" section below.
+- If interrupted, try to ensure that `Copilot-Processing.md` documents current state and next steps for resumption of work.
 
 **Progress Update Format:**
 
@@ -45,12 +45,12 @@ Patterns for effective AI assistant communication and user experience. The keywo
 
 ## Provide Progress Feedback During Long Operations
 
-When running long processes (API calls, searches, file operations taking >30 seconds):
+When running long processes (API calls, searches, file operations taking >30 seconds), run it through a task/script that:
 
-- Emit progress updates every ~60 seconds
+- Emits progress updates or a heartbeat every 30-60 seconds
 - Include estimated percentage complete when possible
-- State current operation phase clearly
-- Use status messages to confirm activity
+- States current operation phase clearly
+- Prints a final sentinel __DONE__ message upon completion
 
 Example feedback pattern:
 
@@ -64,6 +64,6 @@ This prevents user uncertainty about whether the agent is stuck or still working
 
 ## Phase 4: Summary
 
-- Add summary to `Copilot-Processing.md`
-- Execute only when ALL actions complete
-- Inform user: "Added final summary to `Copilot-Processing.md`."
+- Add summary of work done to `Copilot-Processing.md`
+- Execute this step only when ALL actions complete
+- Emit message: "Added final summary to `Copilot-Processing.md`."

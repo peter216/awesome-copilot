@@ -16,7 +16,7 @@ description: 'Instructions that are specific to the user\'s environment, such as
 - **Hardware**: Host `HDQBELT1006036` is a Lenovo ThinkPad G14 Gen 3 with 48GB RAM.
 - **NOTE**: Always check the host before assuming which environment we are in as this repository is shared across user's environments.
 - For python packaging, we use `uv`
-- The user's .bashrc imports a function `auto_venv` to automatically determine the venv based on the current directory (incorporated in $PROMPT_COMMAND)
+- `.envrc` and `.env` files are used to set environment variables and load them into the shell environment via direnv
 - The user has a custom `~/bin/` directory with various scripts for system information and task management
 - Functions are store in the `~/function/` directory, which may contain additional environment-specific logic
 - Aliases are defined in the `~/.alias` directory, which may include shortcuts for environment-specific commands

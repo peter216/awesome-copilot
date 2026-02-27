@@ -66,6 +66,7 @@ All agent files (`*.agent.md`), prompt files (`*.prompt.md`), and instruction fi
 - Strongly recommended to specify `model` field
 
 #### Instruction Files (*.instructions.md)
+- Special file `00-HIERARCHY.instructions.md` is used to define order of precedence for instructions files and should be consulted first when processing instructions
 - Must have `description` field (wrapped in single quotes, not empty)
 - Must have `applyTo` field specifying file patterns (e.g., `'**.js, **.ts'`)
 - File names should be lower case with words separated by hyphens

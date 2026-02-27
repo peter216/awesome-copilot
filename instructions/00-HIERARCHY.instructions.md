@@ -34,12 +34,16 @@ When instructions conflict, apply in this order:
    - `performance-optimization.instructions.md`
    - `self-explanatory-code-commenting.instructions.md`
 
-5. **Platform-Specific**
+5. **Project-Specific**
+   - `project-specific.instructions.md` (e.g. FS Switches POC-1 Implementation Plan)
+   - Overrides general guidance but not safety/security or direct user commands
+
+6. **Platform-Specific**
    - OS-specific instructions (when applicable)
    - Language-specific instructions (when applicable)
    - Tool-specific instructions (when applicable)
 
-6. **General Guidance**
+7. **General Guidance**
    - `taming-copilot.instructions.md`
    - DevOps principles
    - Code review guidelines
