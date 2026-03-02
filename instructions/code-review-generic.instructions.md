@@ -14,6 +14,48 @@ When performing a code review, respond in **English** (or specify your preferred
 
 > **Customization Tip**: Change to your preferred language by replacing "English" with "Portuguese (Brazilian)", "Spanish", "French", etc.
 
+## Before You Begin: PR Context & Preparation
+
+Before diving into the code, establish full context. These steps prevent reviewing the wrong branch or missing prior feedback.
+
+### 1. Confirm the Correct Branch
+
+Verify that the branch currently checked out (or the files being reviewed) matches the **head branch** of the pull request — not the base branch, not a stale local copy. If it is unclear which branch is under review, **stop and ask the user** before proceeding.
+
+### 2. Inspect the Actual Files, Not Just the Diff
+
+Read the relevant changed files in full from the head branch. Diff context is useful for orientation, but:
+- Lines shown in a diff may be incomplete or misleading without surrounding context.
+- Bugs and structural problems are often only visible in the full file.
+- Verify file paths actually exist in the head branch before citing them in a review comment.
+
+### 3. Use `gh` CLI to Gather PR Context
+
+When `gh` CLI is available, use it to pull live PR metadata before reviewing. This surfaces prior conversations, resolved threads, and automated alerts that may already be addressed or disputed.
+
+```bash
+gh pr list                       # confirm PR exists and its number
+gh pr view {id}                  # title, description, labels, reviewers, status
+gh pr view {id} --comments       # all comments and review threads
+gh pr checks {id}                # CI/CD and code scanning status
+```
+
+> The `gh-cli` skill in this workspace provides a comprehensive reference for all `gh` commands.
+
+### 4. Independently Evaluate Automated Scanner Alerts
+
+When a code scanner (GitHub Advanced Security, CodeQL, Dependabot, etc.) has flagged something on the PR:
+- **Do not treat the alert as a confirmed finding.** Scanners produce false positives, especially for pattern-based rules (e.g., "password in plaintext" matching a YAML key that holds a dummy value).
+- Read the flagged line(s) in their full context.
+- Make an independent judgment: is this a real vulnerability, a test fixture, a placeholder, or an intentional pattern?
+- State your assessment clearly: confirm the finding, or explain why it is a false positive.
+
+### 5. Review Prior Review Comments
+
+Before raising any new issue, check whether it was already raised in a prior review round (via `gh pr view {id} --comments`). Avoid re-opening resolved threads unless the resolution was insufficient. Note which threads remain unresolved and whether the PR author has responded.
+
+---
+
 ## Review Priorities
 
 When performing a code review, prioritize issues in the following order:
