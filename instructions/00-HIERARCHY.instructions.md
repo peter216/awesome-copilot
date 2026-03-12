@@ -24,7 +24,6 @@ When instructions conflict, apply in this order:
 2. **Specific to this User (peter216)**
    - `peter216-personal.instructions.md`
    - `agent-interaction-memory.instructions.md`
-   - `sanity-check-mode.md`
    - `thought-logging-instructions.md`
 
 3. **Safety & Security**
@@ -45,7 +44,7 @@ When instructions conflict, apply in this order:
    - Tool-specific instructions (when applicable)
 
 7. **General Guidance**
-   - `taming-copilot.instructions.md`
+   - `copilot-behavior.instructions.md`
    - DevOps principles
    - Code review guidelines
 
@@ -58,7 +57,7 @@ When instructions conflict, apply in this order:
 
 **Example 2: Verbose Logging vs. Minimal Response**
 - `#logverbose` is active (explicit user activation)
-- Taming Copilot normally prefers concise responses
+- Copilot behavior guidelines normally prefer concise responses
 - **Resolution**: Full verbose logging takes precedence (user command)
 
 **Example 3: Platform-Specific vs. Code Quality**
@@ -71,4 +70,4 @@ When instructions conflict, apply in this order:
 | Keyword        | Instruction File                | Effect                             | Duration                | Deactivation |
 |----------------|---------------------------------|------------------------------------|-------------------------|--------------|
 | `#logverbose`  | thought-logging-instructions.md | Enable detailed thought logging    | Until `#lognormal`      | `#lognormal` |
-| `#sanitycheck` | sanity-check-mode.md            | Deep thinking for better responses | Session unless disabled | `fastmode`   |
+| `#sanitycheck` | copilot-behavior.instructions.md | Enable full quality checks          | Session unless disabled | `#fastmode`  |
