@@ -22,6 +22,7 @@ When instructions conflict, apply in this order:
    - Override ALL other instructions
 
 2. **Specific to this User (peter216)**
+   - `peter216-personal.instructions.md`
    - `agent-interaction-memory.instructions.md`
    - `sanity-check-mode.md`
    - `thought-logging-instructions.md`
