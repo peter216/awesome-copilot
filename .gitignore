@@ -15,3 +15,10 @@ website/dist/
 website/.astro/
 website/public/data/*
 website/public/llms.txt
+
+# Linters
+.ansible-lint
+.djlintrc
+.gitleaks.toml
+.pre-commit-config.yaml
+.yamllint
